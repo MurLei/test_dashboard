@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row align-self-center p-10  ">
+        <div class="col-12 d-flex p-10  justify-content-center ">
+            <mat-card>
+                <div class="heading">
+                    <h2>Login</h2>
+                </div>
+                <div class="email">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="password">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput placeholder="password" [formControl]="password" required>
+                        <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                    <div><button mat-button color="" routerLink="/home"> login</button></div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

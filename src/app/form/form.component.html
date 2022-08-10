@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="form_card">
+                <form class="example-form p-10 ">
+                    <!-- NAME -->
+                    <div class="c">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Ex. John" value="">
+                          </mat-form-field>
+                    </div>
+                    <!-- VH.MODEL -->
+                    <div class="c">
+                        <mat-form-field class="w-64" appearance="outline">
+                            <mat-label>Favorite car</mat-label>
+                            <mat-select matNativeControl [(ngModel)]="selectedCar" name="car">
+                              <mat-option value="" selected>ALL</mat-option>
+                              <mat-option *ngFor="let car of cars" [value]="car.viewValue">
+                                {{car.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <!-- CAT OF VH -->
+                    <div class="c">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                              <mat-label></mat-label>
+                              <input type="text"
+                                     placeholder="Pick one"
+                                     aria-label="Number"
+                                     matInput
+                                     [formControl]="myControl"
+                                     [matAutocomplete]="auto">
+                              <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                  {{option}}
+                                </mat-option>
+                              </mat-autocomplete>
+                            </mat-form-field>
+                          </form>
+                    </div>
+
+                    <div class="c">
+    
+                          <section class="example-section">
+                            <mat-radio-group aria-label="Select an option" [(ngModel)]="rValue" [ngModelOptions]="{standalone: true}">
+                                <mat-radio-button value="1">General service</mat-radio-button>
+                                <mat-radio-button value="2">Full service</mat-radio-button>
+                              </mat-radio-group>
+                          </section>
+
+                          <section class="example-section">
+                            
+                            <mat-checkbox class="example-margin" >With gst</mat-checkbox>
+                          </section>
+                        
+                    </div>
+
+                    <div class="c mt-5 pb-0"><p>price:</p></div>
+    
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+
